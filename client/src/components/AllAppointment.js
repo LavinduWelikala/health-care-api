@@ -9,7 +9,7 @@ import "../styles/AllAppointment.css";
 
 export default function AllAppointment() {
   const [faFileDownload] = useState([]);
-  const[docName,setDoctorName]=useState("");
+  const [docName, setDoctorName] = useState("");
   const [columns] = useState([]);
   const [column, setColumns] = useState([]);
   const [appointments, setAppointments] = useState([]);
@@ -39,15 +39,15 @@ export default function AllAppointment() {
 
     const columnStyles = {
       0: { columnWidth: 20 },
-      1: { columnWidth: 20 }, 
-      2: { columnWidth: 20 }, 
-      3: { columnWidth: 21 }, 
-      4: { columnWidth: 20 }, 
-      5: { columnWidth: 20 }, 
-      6: { columnWidth: 20 }, 
-      7: { columnWidth: 20 }, 
+      1: { columnWidth: 20 },
+      2: { columnWidth: 20 },
+      3: { columnWidth: 21 },
+      4: { columnWidth: 20 },
+      5: { columnWidth: 20 },
+      6: { columnWidth: 20 },
+      7: { columnWidth: 20 },
       8: { columnWidth: 15 },
-      9: { columnWidth: 10 }, 
+      9: { columnWidth: 10 },
     };
 
     doc.autoTable({
@@ -60,69 +60,95 @@ export default function AllAppointment() {
     doc.save("appointments_report.pdf");
   }
 
-
   if (filteredAppointments.length === 0) {
     return <p>No appointments found</p>;
   }
 
   return (
-    <div style={{ marginTop: "30px", textAlign: "center" }}>
-      <h1>All Appointments</h1>
-      <div style={{ marginBottom: "20px" }}>
-        <div className="search-bar">
-          <input
-            type="text"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            placeholder="Search by Doctor Name"
-          />
-          <FontAwesomeIcon icon={faSearch} className="app-search-icon" />
+    <>
+      <div style={{ marginTop: "30px", textAlign: "center" }}>
+        <h1>All Appointments</h1>
+        <div style={{ marginBottom: "20px" }}>
+          <div className="search-bar">
+            <input
+              type="text"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder="Search by Doctor Name"
+            />
+            <FontAwesomeIcon icon={faSearch} className="app-search-icon" />
+          </div>
         </div>
-      </div>
-      <table className="table-aa" style={{ margin: "auto" }}>
-        <thead>
-          <tr>
-            <th>Patient Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Doctor Name</th>
-            <th>Appointment Date</th>
-            <th>Appointment Time</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredAppointments.map((appointment, index) => (
-            <tr key={index}>
-              <td>{appointment.patientName}</td>
-              <td>{appointment.email}</td>
-              <td>{appointment.phone}</td>
-              <td>{appointment.doctorName}</td>
-              <td>{appointment.appointmentDate}</td>
-              <td>{appointment.appointmentTime}</td>
-              <td>
-                <Link
-                  to={`/update/${appointment._id}`}
-                  className="btn btn-sm btn-update"
-                >
-                  Update
-                </Link>
-                <Link
-                  to={`/delete/${appointment._id}`}
-                  className="btn btn-sm ms-1 btn-delete"
-                >
-                  Delete
-                </Link>
-              </td>
+        <table className="table-aa" style={{ margin: "auto" }}>
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Doctor Name</th>
+              <th>Appointment Date</th>
+              <th>Appointment Time</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <button className="app-generate" onClick={generateReport}>
-        Download Report
-        <FontAwesomeIcon icon={faFileDownload} className="app-report-icon" />
-      </button>
-    </div>
+          </thead>
+          <tbody>
+            {filteredAppointments.map((appointment, index) => (
+              <tr key={index}>
+                <td>{appointment.patientName}</td>
+                <td>{appointment.email}</td>
+                <td>{appointment.phone}</td>
+                <td>{appointment.doctorName}</td>
+                <td>{appointment.appointmentDate}</td>
+                <td>{appointment.appointmentTime}</td>
+                <td>
+                  <Link
+                    to={`/update/${appointment._id}`}
+                    className="btn btn-sm btn-update"
+                  >
+                    Update
+                  </Link>
+                  <Link
+                    to={`/delete/${appointment._id}`}
+                    className="btn btn-sm ms-1 btn-delete"
+                  >
+                    Delete
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <button 
+          className="app-generate" 
+          onClick={generateReport}
+          style={{ marginBottom: "50px" }}
+        >
+          Download Report
+          <FontAwesomeIcon icon={faFileDownload} className="app-report-icon" />
+        </button>
+      </div>
+      <footer
+        className="py-3"
+        style={{
+          backgroundColor: "#eef4ed",
+          borderTop: "1px solid #ccc",
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-md-start text-center">
+              <p className="mb-1 fw-bold">HCMS © {new Date().getFullYear()}</p>
+              <p className="mb-0">Healthcare Management System</p>
+            </div>
+            <div className="col-md-6 text-md-end text-center">
+              <p className="mb-1">📍 123 Main Street, Colombo, Sri Lanka</p>
+              <p className="mb-0">
+                📞 ‪+94 11 2345678‬ | ✉ <a href="mailto:info@hcms.lk">info@hcms.lk</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
-
