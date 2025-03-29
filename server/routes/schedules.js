@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Schedule = require("../models/schedule");
+const Schedule = require("../models/Schedule");
 const json2csv = require("json2csv").parse;
 
 router.post("/schedule/add", (req, res) => {
