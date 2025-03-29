@@ -60,7 +60,7 @@ const goalsRouter = require("./routes/goals.js");
 
 app.use("/goals", goalsRouter);
 
-const ticketRouter = require("./routes/Ticket.js");
+const ticketRouter = require("./routes/ticket.js");
 
 app.use("/ticket", ticketRouter);
 

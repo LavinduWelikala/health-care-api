@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Payments = require("../models/giPayments.js");
+const Payments = require("../models/GiPayments.js");
 
 router.route("/add").post((req, res) => {
   const Cholder = req.body.CardHolderName;
