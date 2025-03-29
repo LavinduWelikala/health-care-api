@@ -1,0 +1,20 @@
+/* hr {
+    border-top: 1px solid rgba(0, 0, 0, 1);
+    width: 100%;
+  } */
+  #invoice-form {
+    background-color: #a0d2eb; 
+  }
+
+
+ .container-ph1 {
+  margin-left: 220px;
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container-ph1 .row{
+  margin-bottom: 20px;
+}

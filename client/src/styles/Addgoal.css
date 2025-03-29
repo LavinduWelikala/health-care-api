@@ -1,0 +1,86 @@
+.bigcontainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 100px auto 0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 40px;
+  }
+  
+  .bigcontainer h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .bigcontainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bigcontainer label {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .bigcontainer input[type="number"] {
+    font-size: 24px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  
+  .checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .day-container {
+    
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    outline: 2px solid #070708;
+    border-radius: 50px;
+    padding: 2px 20px;
+    text-align: center;
+    height: 30px;
+    
+  }
+  
+  .bigcontainer button[type="submit"] {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+  
+  .bigcontainer input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+  }
+  
+  .day-container label {
+    font-size: 20px;
+  }
+    
+  .description-container {
+    flex: 1;
+    
+  }
+  
+  .description-container p {
+    font-size: 18px;
+    max-width: 500px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  

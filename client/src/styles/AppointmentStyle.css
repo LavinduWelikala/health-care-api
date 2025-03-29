@@ -1,0 +1,17 @@
+.container-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.make-appointment-page {
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    width: 50%;
+}
+
+.confirm {
+    justify-content: center;
+}

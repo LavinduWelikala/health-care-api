@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+.heading-quiz{
+    text-align: left;
+    margin-top: -50px;
+    padding-top:30px;
+    padding-left: 40px;
+    background-color: #2348FF;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+}
+.heading-quiz h1{
+    text-align: left;
+    font-size: 30px;
+}
+.heading-quiz p{
+    font-size: 20px;
+}
+.footer-quiz{
+    margin-top: 20px;
+    padding: 50px;
+    border-radius: 30px;
+    background-color: #2348FF;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;  
+}

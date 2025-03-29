@@ -1,0 +1,38 @@
+
+#medicine-form {
+  background-color: #a0d2eb; 
+}
+
+.page-header-am {
+    position: relative;
+    height: 800px; 
+  }
+
+  .text-center-am {
+    position: absolute;
+   margin-top: 50px;
+    left: 0%;
+    transform: translateX(200%);
+  }
+
+  .container-ph2{
+    margin-left: 220px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+  }
+
+  .container-ph2 .row{
+    margin-bottom: 20px;
+  }
+  #add-medicine-heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3f51b5;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    margin-left: -25px;
+  }
+  
+  

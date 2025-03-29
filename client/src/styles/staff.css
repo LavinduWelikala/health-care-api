@@ -1,0 +1,28 @@
+.icon{
+    margin: "auto";
+    font-size : 20px;
+}
+
+.text{
+    font-size: 20px;
+}
+
+.btn-outline-primary{
+    width: 100px;
+    margin-left: 30px;
+}
+
+.btn-outline-primary:hover{
+    border-color: #386fa4;
+    background: #386fa4;
+}
+
+.form-control{
+    border-radius: 8px 0px 0px 8px;
+}
+
+.btn-outline-success{
+    border-color: #06d6a0;
+    background: #06d6a0;
+    border-radius: 0px 8px 8px 0px;
+}

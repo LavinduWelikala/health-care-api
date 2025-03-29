@@ -1,0 +1,45 @@
+.table-aa table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    
+    .table-aa th,
+    .table-aa td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd; 
+    }
+    
+    .table-aa tr:nth-child(even) {
+    background-color: #f2f2f2;
+    }
+    
+    .table-aa th {
+    background-color: #1e90e1;
+     color: white;
+    }
+    
+    .table-aa .btn-update{
+        background-color: #1e0af5;
+        border-radius: 10px;
+    }
+    
+    .table-aa .btn-delete{
+        background-color: #ea0606;
+        border-radius: 10px;
+    }
+    
+    .app-search-icon{
+      background-color: blue;
+      color: white;
+      padding: 5px;
+      border-radius: 50%;
+    }
+    
+    .app-generate{
+      background-color: rgb(5, 128, 229);
+      border-radius: 10px;
+      margin-top: 30px;
+      height: 50px;
+      width: 150px;
+    }
