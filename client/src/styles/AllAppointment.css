@@ -1,45 +1,169 @@
+/* Main table styling with enhanced design */
 .table-aa table {
-    border-collapse: collapse;
-    width: 100%;
-    }
-    
-    .table-aa th,
-    .table-aa td {
-    text-align: left;
-    padding: 8px;
-    border: 1px solid #ddd; 
-    }
-    
-    .table-aa tr:nth-child(even) {
-    background-color: #f2f2f2;
-    }
-    
-    .table-aa th {
-    background-color: #1e90e1;
-     color: white;
-    }
-    
-    .table-aa .btn-update{
-        background-color: #1e0af5;
-        border-radius: 10px;
-    }
-    
-    .table-aa .btn-delete{
-        background-color: #ea0606;
-        border-radius: 10px;
-    }
-    
-    .app-search-icon{
-      background-color: blue;
-      color: white;
-      padding: 5px;
-      border-radius: 50%;
-    }
-    
-    .app-generate{
-      background-color: rgb(5, 128, 229);
-      border-radius: 10px;
-      margin-top: 30px;
-      height: 50px;
-      width: 150px;
-    }
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.table-aa th,
+.table-aa td {
+  text-align: left;
+  padding: 12px 16px;
+  border: none;
+  position: relative;
+}
+
+/* Gradient header for visual impact */
+.table-aa th {
+  background: linear-gradient(135deg, #4a90e2, #2563eb);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Striped rows with hover effect */
+.table-aa tr:nth-child(even) {
+  background-color: #f8faff;
+}
+
+.table-aa tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.table-aa tr:hover {
+  background-color: #f0f7ff;
+  transition: background-color 0.2s ease;
+}
+
+/* Subtle border between rows */
+.table-aa td {
+  border-bottom: 1px solid #eaedf5;
+}
+
+.table-aa tr:last-child td {
+  border-bottom: none;
+}
+
+/* Button styling with hover effects */
+.table-aa .btn-update {
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
+}
+
+.table-aa .btn-update:hover {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4);
+}
+
+.table-aa .btn-delete {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(220, 38, 38, 0.3);
+  transition: all 0.2s ease;
+}
+
+.table-aa .btn-delete:hover {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.4);
+}
+
+/* Channel button styling */
+.btn-danger {
+  background: linear-gradient(to right, #8b5cf6, #6d28d9);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(109, 40, 217, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(to right, #6d28d9, #5b21b6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(109, 40, 217, 0.4);
+}
+
+/* Custom appointment button */
+.btn-primary {
+  background: linear-gradient(to right, #f97316, #ea580c);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(234, 88, 12, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #ea580c, #c2410c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(234, 88, 12, 0.4);
+}
+
+/* Search icon styling */
+.app-search-icon {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3);
+}
+
+/* Generate button styling */
+.app-generate {
+  background: linear-gradient(to right, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 30px;
+  height: 50px;
+  width: 150px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s ease;
+}
+
+.app-generate:hover {
+  background: linear-gradient(to right, #059669, #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Left side styling */
+.appointment-info-container {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-info-container h1 {
+  color: #1e40af;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
