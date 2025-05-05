@@ -57,12 +57,10 @@ export default function AddAppointment() {
   };
 
   const isValidPhone = (phone) => {
-    
     const phonePattern = /^\d{10}$/;
     if(phone.length<10 || phone.length>10){
       return phonePattern.test(phone);}
     return phonePattern.test(phone);
-      
   };
 
   function sendData(e) {
@@ -93,7 +91,6 @@ export default function AddAppointment() {
         alert(err.message);
       });
   }
-  
 
   return (
     <>
@@ -125,7 +122,7 @@ export default function AddAppointment() {
       <div className="container-app" style={{ marginTop: "-50px" }}>
         <form onSubmit={sendData} className="make-appointment-page">
           <div className="mb-3">
-            <label for="pname" className="form-label">
+            <label htmlFor="pname" className="form-label">
               Patient Name
             </label>
             <input
@@ -141,7 +138,7 @@ export default function AddAppointment() {
           </div>
 
           <div className="mb-3">
-            <label for="email" className="form-label">
+            <label htmlFor="email" className="form-label">
               Email
             </label>
             <input
@@ -157,7 +154,7 @@ export default function AddAppointment() {
           </div>
 
           <div className="mb-3">
-            <label for="phone" className="form-label">
+            <label htmlFor="phone" className="form-label">
               Phone Number
             </label>
             <input
@@ -165,7 +162,7 @@ export default function AddAppointment() {
               type="text"
               className={`form-control ${errors.phone ? "is-invalid" : ""}`}
               id="phone"
-              placeholder="Enter Phone Numner"
+              placeholder="Enter Phone Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -173,7 +170,7 @@ export default function AddAppointment() {
           </div>
 
           <div className="mb-3">
-            <label for="dname" className="form-label">
+            <label htmlFor="dname" className="form-label">
               Doctor Name
             </label>
             <input
@@ -189,7 +186,7 @@ export default function AddAppointment() {
           </div>
 
           <div className="mb-3">
-            <label for="date" className="form-label">
+            <label htmlFor="date" className="form-label">
               Appointment Date
             </label>
             <input
@@ -205,7 +202,7 @@ export default function AddAppointment() {
           </div>
 
           <div className="mb-3">
-            <label for="tiem" className="form-label">
+            <label htmlFor="time" className="form-label">
               Appointment Time
             </label>
             <input
@@ -225,6 +222,28 @@ export default function AddAppointment() {
           </button>
         </form>
       </div>
+      <footer
+        className="py-3"
+        style={{
+          backgroundColor: "#eef4ed",
+          borderTop: "1px solid #ccc",
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-md-start text-center">
+              <p className="mb-1 fw-bold">HCMS © {new Date().getFullYear()}</p>
+              <p className="mb-0">Healthcare Management System</p>
+            </div>
+            <div className="col-md-6 text-md-end text-center">
+              <p className="mb-1">📍 123 Main Street, Colombo, Sri Lanka</p>
+              <p className="mb-0">
+                📞 ‪+94 11 2345678‬ | ✉ <a href="mailto:info@hcms.lk">info@hcms.lk</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
