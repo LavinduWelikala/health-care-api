@@ -10,7 +10,6 @@ export default function AddSpecialist() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [nic, setNIC] = useState("");
-  // const [photoURL, setPhotoURL] = useState("");
   const [role, setRole] = useState("");
 
   const handleSubmit = (event) => {
@@ -41,7 +40,6 @@ export default function AddSpecialist() {
           email,
           nic,
           role,
-          // photoURL,
         }),
       });
 
@@ -96,115 +94,132 @@ export default function AddSpecialist() {
   }
 
   return (
-    <div className="container">
-      <Form noValidate validated={validated} onSubmit={sendData}>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="registerName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              required
-              minLength={3}
-              type="text"
-              placeholder="Your name"
-              onChange={(event) => setName(event.target.value)}
-            />
-            <Form.Control.Feedback type="invalid" isInvalid={name.length < 3}>
-              {name.length === 0
-                ? "Name is required"
-                : "Name should be atleast three characters"}
-            </Form.Control.Feedback>
-            <Form.Control.Feedback
-              isValid={name.length >= 3}
-            ></Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group as={Col} md="6" controlId="registerEmail">
-            <Form.Label>Email</Form.Label>
-            <InputGroup hasValidation>
-              <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+    <div className="d-flex flex-column min-vh-100">
+      <div className="flex-grow-1 container">
+        <Form noValidate validated={validated} onSubmit={sendData}>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="registerName">
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 required
-                type="email"
-                placeholder="Email"
-                aria-describedby="inputGroupPrepend"
-                onChange={(event) => setEmail(event.target.value)}
-              />
-              <Form.Control.Feedback
-                type="invalid"
-                isInvalid={
-                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
-                }
-              >
-                {email.length === 0
-                  ? "Email is required"
-                  : "Please enter a valid email"}
-              </Form.Control.Feedback>
-              <Form.Control.Feedback
-                isValid={
-                  !!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
-                }
-              ></Form.Control.Feedback>
-            </InputGroup>
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="registerNIC">
-            <Form.Label>NIC</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                required
-                minLength={10}
-                type="text"
-                placeholder="NIC"
-                aria-describedby="inputGroupPrepend"
-                onChange={(event) => setNIC(event.target.value)}
-              />
-              <Form.Control.Feedback
-                type="invalid"
-                isInvalid={!/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/i.test(nic)}
-              >
-                {nic.length === 0
-                  ? "NIC is required"
-                  : "Please enter a valid NIC"}
-              </Form.Control.Feedback>
-              <Form.Control.Feedback
-                isValid={!!/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/i.test(nic)}
-              ></Form.Control.Feedback>
-            </InputGroup>
-          </Form.Group>
-          <Form.Group as={Col} md="6" controlId="registerSpec">
-            <Form.Label>Designation</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                required
-                type="text"
                 minLength={3}
-                placeholder="Designation"
-                aria-describedby="inputGroupPrepend"
-                onChange={(event) => setRole(event.target.value)}
+                type="text"
+                placeholder="Your name"
+                onChange={(event) => setName(event.target.value)}
               />
-              <Form.Control.Feedback type="invalid" isInvalid={role.length < 3}>
-                {role.length === 0
-                  ? "Designation is required"
-                  : "Designation should be atleast three characters"}
+              <Form.Control.Feedback type="invalid" isInvalid={name.length < 3}>
+                {name.length === 0
+                  ? "Name is required"
+                  : "Name should be at least three characters"}
               </Form.Control.Feedback>
               <Form.Control.Feedback
-                isValid={role.length >= 3}
+                isValid={name.length >= 3}
               ></Form.Control.Feedback>
-            </InputGroup>
-          </Form.Group>
-        </Row>
-        {/* <Form.Group as={Col} md="6" controlId="registerPhoto">
-            <Form.Label>Profile Image</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                type="file"
-                aria-describedby="inputGroupPrepend"
-                onChange={(event) => setPhotoURL(event.target.files[0])}
-              />
-            </InputGroup>
-          </Form.Group> */}
-        <Button type="submit">Add</Button>
-      </Form>
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="registerEmail">
+              <Form.Label>Email</Form.Label>
+              <InputGroup hasValidation>
+                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                <Form.Control
+                  required
+                  type="email"
+                  placeholder="Email"
+                  aria-describedby="inputGroupPrepend"
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+                <Form.Control.Feedback
+                  type="invalid"
+                  isInvalid={
+                    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
+                  }
+                >
+                  {email.length === 0
+                    ? "Email is required"
+                    : "Please enter a valid email"}
+                </Form.Control.Feedback>
+                <Form.Control.Feedback
+                  isValid={
+                    !!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
+                  }
+                ></Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="registerNIC">
+              <Form.Label>NIC</Form.Label>
+              <InputGroup hasValidation>
+                <Form.Control
+                  required
+                  minLength={10}
+                  type="text"
+                  placeholder="NIC"
+                  aria-describedby="inputGroupPrepend"
+                  onChange={(event) => setNIC(event.target.value)}
+                />
+                <Form.Control.Feedback
+                  type="invalid"
+                  isInvalid={!/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/i.test(nic)}
+                >
+                  {nic.length === 0
+                    ? "NIC is required"
+                    : "Please enter a valid NIC"}
+                </Form.Control.Feedback>
+                <Form.Control.Feedback
+                  isValid={!!/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/i.test(nic)}
+                ></Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="registerSpec">
+              <Form.Label>Designation</Form.Label>
+              <InputGroup hasValidation>
+                <Form.Control
+                  required
+                  type="text"
+                  minLength={3}
+                  placeholder="Designation"
+                  aria-describedby="inputGroupPrepend"
+                  onChange={(event) => setRole(event.target.value)}
+                />
+                <Form.Control.Feedback type="invalid" isInvalid={role.length < 3}>
+                  {role.length === 0
+                    ? "Designation is required"
+                    : "Designation should be at least three characters"}
+                </Form.Control.Feedback>
+                <Form.Control.Feedback
+                  isValid={role.length >= 3}
+                ></Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+          </Row>
+          <Button type="submit">Add</Button>
+        </Form>
+      </div>
+
+      {/* Footer */}
+      <footer
+        className="py-3 mt-auto"
+        style={{
+          backgroundColor: "#eef4ed",
+          borderTop: "1px solid #ccc",
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-md-start text-center">
+              <p className="mb-1 fw-bold">HCMS © {new Date().getFullYear()} All Right Reserved</p>
+              <p className="mb-0">Healthcare Management System</p>
+            </div>
+            <div className="col-md-6 text-md-end text-center">
+              <p className="mb-1">📍 123 Main Street, Colombo, Sri Lanka</p>
+              <p className="mb-0">
+                📞 +94 11 2345678 | ✉️{" "}
+                <a href="mailto:info@hcms.lk">info@hcms.lk</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

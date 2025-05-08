@@ -56,7 +56,7 @@ function Staff() {
     <div>
       <div>
         <div style={{ marginBottom: "50px" }}>
-          <h1 style={{ textAlign: "center" }}>Staff Details</h1>
+          <h1 style={{ textAlign: "left" }}>Staff Management</h1>
         </div>
         <div style={{ marginBottom: "50px", display: "flex" }}>
           <div>

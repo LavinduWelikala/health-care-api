@@ -62,7 +62,7 @@ function Staff() {
     <div>
       <div>
         <div style={{ marginBottom: "50px" }}>
-          <h1 style={{ textAlign: "center" }}>Specialist Portfolios</h1>
+          <h1 style={{ textAlign: "left" }}>Portfolio Management</h1>
         </div>
         <div style={{ marginBottom: "50px", display: "flex" }}>
           <div>

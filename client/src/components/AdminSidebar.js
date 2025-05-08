@@ -36,7 +36,7 @@ function Sidebar({ children }) {
         name: "Appointments",
         icon: <FaCalendarCheck />,
       },
-      { path: "/admin/schedule", name: "Schedules", icon: <FaClipboardList /> },
+      // { path: "/admin/schedule", name: "Schedules", icon: <FaClipboardList /> },
     ];
   } else if (userRole === "doctor") {
     menuIem = [
@@ -51,7 +51,7 @@ function Sidebar({ children }) {
       <div style={{ width: isOpen ? "250px" : "50px" }} className="sidebar">
         <div className="top_section">
           <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-            Logo
+            HCMS
           </h1>
           <div
             style={{ marginLeft: isOpen ? "100px" : "0px" }}
