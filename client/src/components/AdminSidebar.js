@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "../styles/adminSideBar.css";
+import logo from "../assets/logo.png";
 
 function Sidebar({ children }) {
   const userRole = localStorage.getItem("userRole");
@@ -50,9 +51,16 @@ function Sidebar({ children }) {
     <div className="container1">
       <div style={{ width: isOpen ? "250px" : "50px" }} className="sidebar">
         <div className="top_section">
-          <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-            HCMS
-          </h1>
+          <img
+            src={logo}
+            alt="HCMS Logo"
+            className="logo"
+            style={{
+              display: isOpen ? "block" : "none",
+              width: "200px", // Logo size 
+              height: "100px",
+            }}
+          />
           <div
             style={{ marginLeft: isOpen ? "100px" : "0px" }}
             className="bars"
