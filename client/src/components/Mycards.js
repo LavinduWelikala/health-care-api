@@ -42,14 +42,14 @@ function Mycards() {
         .get("http://localhost:8070/ipayments/")
         .then((res) => {
           const filteredPayments = res.data.filter((payment) =>
-                payment.Cholder.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                payment.date.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                payment.cvv.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                (typeof payment.Cnumber === 'string' && payment.phonenumber.toLowerCase().includes(searchQuery.toLowerCase())) 
-                
+            payment.Cholder.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            payment.date.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            payment.cvv.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (typeof payment.Cnumber === 'string' && payment.phonenumber.toLowerCase().includes(searchQuery.toLowerCase()))
 
-              );
-              setPayment(filteredPayments);
+
+          );
+          setPayment(filteredPayments);
         })
         .catch((err) => {
           alert(err.message);
@@ -73,22 +73,22 @@ function Mycards() {
 
   const styles = StyleSheet.create({
     page: {
-        backgroundColor: '#ffffff',
-        padding: 20
+      backgroundColor: '#ffffff',
+      padding: 20
     },
     section: {
-        margin: 10,
-        padding: 10,
-        flexGrow: 1
+      margin: 10,
+      padding: 10,
+      flexGrow: 1
     },
     tableHeader: {
-        backgroundColor: '#f2f2f2'
+      backgroundColor: '#f2f2f2'
     },
     tableRow: {
-        flexDirection: 'row'
+      flexDirection: 'row'
     },
     tableCell: {
-        padding: 5
+      padding: 5
     }
   });
 
@@ -97,28 +97,28 @@ function Mycards() {
 
   const PaymentDocument = () => (
     <Document>
-        <Page size="A3" style={styles.page}>
-            <View style={styles.section}>
-                <Text style={{ fontSize: 10, marginBottom: 10 }}>Payment List</Text>
-                <View style={[styles.tableRow, styles.tableHeader]}>
-                    <Text style={[styles.tableCell, { flex: 1 }]}>ID</Text>
-                    <Text style={[styles.tableCell, { flex: 4 }]}>Cholder Name</Text>
-                    <Text style={[styles.tableCell, { flex: 20 }]}>Cnumber Count</Text>
-                    <Text style={[styles.tableCell, { flex: 4 }]}>Date</Text>
-                    <Text style={[styles.tableCell, { flex: 4 }]}>cvv</Text>           
-                
-                </View>
-                {payments.map((item,index) => (
-                    <View key={index} style={[styles.tableRow, { borderBottom: '1 solid #ccc' }]}>
-                        <Text style={[styles.tableCell, { flex: 1 }]}>{index+1}</Text>
-                        <Text style={[styles.tableCell, { flex: 4 }]}>{item.Cholder}</Text>
-                        <Text style={[styles.tableCell, { flex: 20 }]}>{item.Cnumber}</Text>
-                        <Text style={[styles.tableCell, { flex: 4 }]}>{item.date}</Text>
-                        <Text style={[styles.tableCell, { flex: 4 }]}>{item.cvv}</Text>
-                    </View>
-                ))}
+      <Page size="A3" style={styles.page}>
+        <View style={styles.section}>
+          <Text style={{ fontSize: 10, marginBottom: 10 }}>Payment List</Text>
+          <View style={[styles.tableRow, styles.tableHeader]}>
+            <Text style={[styles.tableCell, { flex: 1 }]}>ID</Text>
+            <Text style={[styles.tableCell, { flex: 4 }]}>Cholder Name</Text>
+            <Text style={[styles.tableCell, { flex: 20 }]}>Cnumber Count</Text>
+            <Text style={[styles.tableCell, { flex: 4 }]}>Date</Text>
+            <Text style={[styles.tableCell, { flex: 4 }]}>cvv</Text>
+
+          </View>
+          {payments.map((item, index) => (
+            <View key={index} style={[styles.tableRow, { borderBottom: '1 solid #ccc' }]}>
+              <Text style={[styles.tableCell, { flex: 1 }]}>{index + 1}</Text>
+              <Text style={[styles.tableCell, { flex: 4 }]}>{item.Cholder}</Text>
+              <Text style={[styles.tableCell, { flex: 20 }]}>{item.Cnumber}</Text>
+              <Text style={[styles.tableCell, { flex: 4 }]}>{item.date}</Text>
+              <Text style={[styles.tableCell, { flex: 4 }]}>{item.cvv}</Text>
             </View>
-        </Page>
+          ))}
+        </View>
+      </Page>
     </Document>
   );
 
@@ -127,10 +127,10 @@ function Mycards() {
       {/* Search bar */}
       <div className="row bg-primary">
         <div className="search-container">
-          <input 
-            type="text" 
-            placeholder="Search..." 
-            onChange={handleSearch} 
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={handleSearch}
             style={{
               borderRadius: "10px",
               border: 0,
@@ -145,20 +145,18 @@ function Mycards() {
             }}
           />
         </div>
-         
-        <button className="btn btn-success" style={{ margin: '0 0'}}>
-          <PDFDownloadLink 
-            style={{ margin: '0 0', textDecoration: 'none', color: '#f9f9f9'}} 
-            document={<PaymentDocument />} 
+
+        <button className="btn btn-success" style={{ margin: '0 0' }}>
+          <PDFDownloadLink
+            style={{ margin: '0 0', textDecoration: 'none', color: '#f9f9f9' }}
+            document={<PaymentDocument />}
             fileName="Payment-document.pdf"
           >
-            {({ blob, url, loading, error }) =>
-              loading ? 'Loading document...' : 'Download Payment report now!'
-            }
+            Download Payment report here!
           </PDFDownloadLink>
         </button>
       </div>
-        
+
       {/* Information section */}
       <div>
         <Container className="my-5" style={{ width: "70%" }}>
@@ -176,7 +174,7 @@ function Mycards() {
                 a secure tokenization process to encrypt and store your card
                 details.
                 We take the security of your personal and financial information very seriously, it is vital to emphasize. In order
-                to safeguard your information and preserve its confidentiality, our website employs industry-standard 
+                to safeguard your information and preserve its confidentiality, our website employs industry-standard
                 encryption technology. Additionally, we never save your complete card number on our systems; instead, we encrypt
                 and store your card information using a safe tokenization technique.
               </p>
@@ -191,20 +189,20 @@ function Mycards() {
           </Row>
         </Container>
       </div>
-        
+
       {/* Add Payment button section */}
       <div className="container" style={{ marginBottom: "50px" }}>
         <div className="container">
           <div className="text-center">
-            <a className="btn btn-primary" href={"/add-payment/"} style={{textDecoration: "none"}}>
+            <a className="btn btn-primary" href={"/add-payment/"} style={{ textDecoration: "none" }}>
               <i className="fas fa-edit">&nbsp; Add Payment +</i>
-            </a> 
+            </a>
           </div>
         </div>
-         
+
         {/* Payment cards section */}
         <div className="row">
-          <div className="col-12"> 
+          <div className="col-12">
             <center>
               <h1>Payment Details</h1>
             </center>
@@ -227,10 +225,10 @@ function Mycards() {
                     <p>{payments.Cnumber}</p>
                     <p>{payments.date}</p>
                     <p>{payments.cvv}</p>
-                    <a className="btn btn-warning" href={"update-payment/" + payments._id} style={{textDecoration: "none"}}>
-                      <i className="fas fa-edit" style={{fontFamily: "Lucida Bright", fontSize: "18px"}}>&nbsp; Edit</i>
+                    <a className="btn btn-warning" href={"update-payment/" + payments._id} style={{ textDecoration: "none" }}>
+                      <i className="fas fa-edit" style={{ fontFamily: "Lucida Bright", fontSize: "18px" }}>&nbsp; Edit</i>
                     </a>
-          
+
                     <br />
                     <Link
                       to="view-payment/"
@@ -247,7 +245,7 @@ function Mycards() {
           </div>
         </div>
       </div>
-  
+
       {/* Original Footer */}
       <footer
         className="py-3"
