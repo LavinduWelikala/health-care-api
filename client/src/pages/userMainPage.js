@@ -222,14 +222,25 @@ function userMainPage() {
           </Row>
         </Container>
         <div>
-          <footer className="py-3" style={{ backgroundColor: "#eef4ed" }}>
+          <footer
+            className="py-3 mt-auto"
+            style={{
+              backgroundColor: "#eef4ed",
+              borderTop: "1px solid #ccc",
+            }}
+          >
             <div className="container">
               <div className="row">
-                <div className="col-md-6">
-                  <p>HCMS &copy; {new Date().getFullYear()}</p>
+                <div className="col-md-6 text-md-start text-center">
+                  <p className="mb-1 fw-bold">HCMS © {new Date().getFullYear()} All Right Reserved</p>
+                  <p className="mb-0">Healthcare Management System</p>
                 </div>
-                <div className="col-md-6 text-md-end">
-                  <p>123 Main Street, Sri Lanka</p>
+                <div className="col-md-6 text-md-end text-center">
+                  <p className="mb-1">📍 123 Main Street, Colombo, Sri Lanka</p>
+                  <p className="mb-0">
+                    📞 +94 11 2345678 | ✉️{" "}
+                    <a href="mailto:info@hcms.lk">info@hcms.lk</a>
+                  </p>
                 </div>
               </div>
             </div>
