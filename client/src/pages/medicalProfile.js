@@ -14,7 +14,6 @@ function MedicalProfile() {
       });
 
       const data = await response.json();
-      // console.log(data);
       if (data) {
         setReportData(data.report);
       }
@@ -37,10 +36,10 @@ function MedicalProfile() {
   }
 
   return (
-    <div>
-      <div>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <div style={{ flex: "1 0 auto", padding: "20px" }}>
         <table
-          class="table"
+          className="table"
           style={{ width: "70%", margin: "auto", textAlign: "center" }}
         >
           <thead>
@@ -55,10 +54,10 @@ function MedicalProfile() {
               </th>
             </tr>
           </thead>
-          <tbody class="table-group-divider">
+          <tbody className="table-group-divider">
             {reportData.map((report, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <th scope="row">{report.id}</th>
                   <td>{report.doctorName}</td>
                   <td>
@@ -128,22 +127,29 @@ function MedicalProfile() {
           <UpdateReport closeModal={setShowModal} details={details} />
         )}
       </div>
-      <footer style={{ backgroundColor: '#f8f9fa', padding: '1rem 0', borderTop: '1px solid #dee2e6' }}>
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 text-md-start text-center">
-          <p className="mb-1 fw-bold">HCMS © {new Date().getFullYear()}</p>
-          <p className="mb-0">Healthcare Management System</p>
+      <footer
+        style={{
+          backgroundColor: "#f8f9fa",
+          padding: "1rem 0",
+          borderTop: "1px solid #dee2e6",
+          flexShrink: 0,
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 text-md-start text-center">
+              <p className="mb-1 fw-bold">HCMS © {new Date().getFullYear()}</p>
+              <p className="mb-0">Healthcare Management System</p>
+            </div>
+            <div className="col-md-6 text-md-end text-center">
+              <p className="mb-1">📍 123 Main Street, Colombo, Sri Lanka</p>
+              <p className="mb-0">
+                📞 +94 11 2345678 | ✉️ <a href="mailto:info@hcms.lk">info@hcms.lk</a>
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="col-md-6 text-md-end text-center">
-          <p className="mb-1">📍 123 Main Street, Colombo, Sri Lanka</p>
-          <p className="mb-0">
-            📞 +94 11 2345678 | ✉️ <a href="mailto:info@hcms.lk">info@hcms.lk</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+      </footer>
     </div>
   );
 }
