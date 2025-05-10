@@ -128,6 +128,22 @@ function MedicalProfile() {
           <UpdateReport closeModal={setShowModal} details={details} />
         )}
       </div>
+      <footer style={{ backgroundColor: '#f8f9fa', padding: '1rem 0', borderTop: '1px solid #dee2e6' }}>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6 text-md-start text-center">
+          <p className="mb-1 fw-bold">HCMS © {new Date().getFullYear()}</p>
+          <p className="mb-0">Healthcare Management System</p>
+        </div>
+        <div className="col-md-6 text-md-end text-center">
+          <p className="mb-1">📍 123 Main Street, Colombo, Sri Lanka</p>
+          <p className="mb-0">
+            📞 +94 11 2345678 | ✉️ <a href="mailto:info@hcms.lk">info@hcms.lk</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
     </div>
   );
 }
